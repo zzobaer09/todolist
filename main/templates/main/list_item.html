@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+{% block title %} {{ls.name}}'s List {% endblock %}
+
+{% block content %}
+
+    <h1>{{ls.name}}' List</h1>
+    <br>
+    <div>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <ol>
+                {% for item in ls.item_set.all %}
+                        {% if item.complete == True %}
+                            <li><h4><input type="checkbox" name="c{{item.id}}" value="click"  checked> {{item.text}} <button type="submit" name="d{{item.id}}" class="btn btn-outline-danger" value="delete">Delete</button> </h4></li>
+                        {% else %}
+                            <li><h4><input type="checkbox" name="c{{item.id}}" value="click"> {{item.text}} <button type="submit" name="d{{item.id}}" class="btn btn-outline-danger" value="delete">Delete</button> </h4></li>
+                        {% endif %}
+                {% endfor %}
+            </ol>
+
+            <br><br><br>
+            Add Item: <input type="text" name="item_new">
+            <br><br>
+            <button type="submit" name="save" value="save" class="btn btn-outline-primary">Save</button> <button type="submit" name="d{{ls.id}}" value="delete-todo" class="btn btn-outline-danger">Delete from ToDoList</button> 
+        </form>
+    </div>
+
+{% endblock %}

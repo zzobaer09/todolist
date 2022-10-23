@@ -25,3 +25,33 @@ def list(response):
             redirect("/list")
     else: form = NewItem()
     return render(response , "main/list.html", {"ls":ls , "form":form})
+
+
+def list_item(response , name):
+    t = ToDoList.objects
+    all = t.all()
+    t_obj = t.get(name=name)
+    if response.method == "POST":
+        print(response.POST)
+        if response.POST.get("save"):
+            if response.POST.get("item_new"):
+                _item = response.POST.get("item_new")
+                t_obj.item_set.create(text=_item , complete=False)
+            for i in t_obj.item_set.all():
+                if response.POST.get("c{}".format(i.id)) == "click":
+                    i.complete = True
+                else: i.complete = False
+                i.save()
+
+        for i in t_obj.item_set.all():
+            if response.POST.get("d{}".format(i.id)) == "delete":
+                i.delete()
+        
+        for i in all:
+            if response.POST.get("d{}".format(i.id)) == "delete-todo":
+                i.delete()
+                return redirect("/list")
+        return redirect("/list/{}".format(name))
+
+    return render(response , "main/list_item.html" , {"ls":t_obj})
+
