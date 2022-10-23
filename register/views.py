@@ -12,3 +12,5 @@ def register(response):
         form = SignUpForm()
     return render(response , "register/register.html", {"signup_form":form})
 
+def profile(response):
+    return render(response , "register/profile.html")
