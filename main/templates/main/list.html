@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+{% block title %} All List {% endblock %}
+
+
+
+{% block content %}
+    <h1>All List</h1>
+    <div class="alllist">
+        <ul>
+            {% for item in ls %}
+                <li><a href="#">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    {% load crispy_forms_tags %}
+    <div class="form">
+        <form action="#" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}        
+            <button type="submit" name="save" value="save" class="btn btn-outline-success">Save</button>
+        </form>
+    </div>
+{% endblock %}
+

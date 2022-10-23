@@ -7,7 +7,7 @@
     <div>
         <form method="post">
             {% csrf_token %}
-                {{signup_form|crispy}}
+            {{signup_form|crispy}}
             <button name="signup" value="signup" class="btn btn-outline-secondary">SignUp</button>
         </form>
     </div>
