@@ -4,14 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .alllist ul li a{
+            color: rgb(72, 121, 145);
+        }
+        .alllist ul li a:hover{
+            color: rgb(61, 73, 179);
+            text-decoration: none;
+        }
+        o-n{
+            color: rgb(253, 108, 132);
+            font-size: larger;
+        }
+    </style>
     <title> {% block title %}{% endblock %} </title>
+
 </head>
 <body>
-    <div>
-        {% block content %}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid a quisquam voluptatum cupiditate, nulla asperiores rerum! Quidem rerum fugiat fugit dolor illo magnam, dolore atque quos vero sed quia dicta.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ipsam deleniti sequi error dolores non quibusdam officia reiciendis, deserunt natus fugit porro esse explicabo a, iure aliquid! Quidem, cum aut?Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sint ipsum repudiandae similique sit at eligendi deserunt, voluptatibus modi minus molestias corrupti harum reprehenderit. Vitae quam reiciendis autem adipisci quo?
-        {% endblock %}
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/list">ToDoList</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list">List</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">SignUp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <br>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div>
+            {% block content %}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid a quisquam voluptatum cupiditate, nulla asperiores rerum! Quidem rerum fugiat fugit dolor illo magnam, dolore atque quos vero sed quia dicta.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ipsam deleniti sequi error dolores non quibusdam officia reiciendis, deserunt natus fugit porro esse explicabo a, iure aliquid! Quidem, cum aut?Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sint ipsum repudiandae similique sit at eligendi deserunt, voluptatibus modi minus molestias corrupti harum reprehenderit. Vitae quam reiciendis autem adipisci quo?
+            {% endblock %}
+        </div>
     </div>
 </body>
 </html>
