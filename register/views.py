@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render,redirect
 from .forms import SignUpForm
 # Create your views here.
@@ -21,7 +21,6 @@ def profile(response):
         return render(response , "register/profile.html")
     else: return redirect("/login")
 
-=======
 from django.shortcuts import render,redirect
 from .forms import SignUpForm
 # Create your views here.
@@ -44,5 +43,4 @@ def profile(response):
         return render(response , "register/profile.html")
     else: return redirect("/login")
 
->>>>>>> 9d6daadb5c6645f0191b77f661bbeb28a7cda260
     
