@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """
 Django settings for todolist project.
 
@@ -138,7 +138,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_REDIRECT_URL = "/profile"
 LOGOUT_REDIRECT_URL = "/profile"
-=======
+
 """
 Django settings for todolist project.
 
@@ -278,4 +278,3 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_REDIRECT_URL = "/profile"
 LOGOUT_REDIRECT_URL = "/profile"
->>>>>>> 9d6daadb5c6645f0191b77f661bbeb28a7cda260
